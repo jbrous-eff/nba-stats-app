@@ -4,14 +4,14 @@ import json
 
 app = Flask(__name__)
 
-# Database connection
+# Database connection using Supabase connection pooler (IPv4)
 def get_db_connection():
     return psycopg2.connect(
-        host='db.fveuqriftywqcqhoujzc.supabase.co',
+        host='aws-0-us-east-1.pooler.supabase.com',
         database='postgres',
-        user='postgres',
+        user='postgres.fveuqriftywqcqhoujzc',
         password='MacGruber6969#',
-        port=5432
+        port=6543
     )
 
 @app.route('/')
@@ -102,3 +102,4 @@ def get_stats():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+
